@@ -1,0 +1,1751 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaika Biryani & Restaurant | 24+ Royal Biryanis</title>
+    <!-- Linking CSS file -->
+    <style>
+/* ===================================================================
+   ZAIKA RESTAURANT - STYLE5.CSS
+   Includes: Navigation, Hero Banner, Biryani Grid, Food Menu,
+             Interactive Bill / Receipt, Booking Form, Print Style
+   =================================================================== */
+
+/* 1. General Setup & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfbf7;
+    color: #333333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 2. Navigation Bar */
+.navbar {
+    background-color: #1f1b18;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo h2 {
+    color: #f59e0b;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f59e0b;
+}
+
+/* 3. Hero / Home Section */
+.home {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+                url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.tagline {
+    display: inline-block;
+    background-color: rgba(245, 158, 11, 0.2);
+    border: 1px solid #f59e0b;
+    color: #fbbf24;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #e5e7eb;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Common Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #d97706;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #b45309;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #374151;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #111827;
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* 4. Section Containers */
+.section {
+    padding: 70px 8%;
+}
+
+.bg-light {
+    background-color: #f4efe6;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.sub-title {
+    color: #d97706;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #1f1b18;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.category-heading {
+    font-size: 22px;
+    color: #1f1b18;
+    margin: 40px 0 20px;
+    border-left: 4px solid #d97706;
+    padding-left: 12px;
+}
+
+/* Biryani Category Filters */
+.biryani-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.b-filter-btn {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.b-filter-btn:hover {
+    border-color: #d97706;
+    color: #d97706;
+}
+
+.b-filter-btn.active {
+    background-color: #d97706;
+    color: #ffffff;
+    border-color: #d97706;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+}
+
+/* 5. Food & Biryani Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 28px;
+}
+
+.food-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eae5db;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.food-card.featured {
+    border: 2px solid #f59e0b;
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #d97706;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.card-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    color: #1f1b18;
+}
+
+.diet-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.diet-tag.veg {
+    color: #16a34a;
+    background-color: #dcfce7;
+}
+
+.diet-tag.non-veg {
+    color: #dc2626;
+    background-color: #fee2e2;
+}
+
+/* Biryani Meta Tags (Spice & Origin) */
+.biryani-meta-tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.spice-tag {
+    background-color: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #ffedd5;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.origin-tag {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.description {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #d97706;
+}
+
+.old-price {
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.add-btn {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: #d97706;
+    color: #ffffff;
+}
+
+/* 6. Bill & Order Section */
+.bill-wrapper {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.receipt-box {
+    background-color: #ffffff;
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.receipt-header h2 {
+    font-size: 24px;
+    color: #1f1b18;
+    letter-spacing: 1px;
+}
+
+.receipt-sub {
+    font-weight: bold;
+    color: #d97706;
+    font-size: 14px;
+}
+
+.receipt-header p {
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.bill-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #374151;
+    background-color: #f9fafb;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.bill-divider {
+    border: none;
+    border-top: 1px dashed #9ca3af;
+    margin: 15px 0;
+}
+
+.bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.bill-table th {
+    text-align: left;
+    padding: 8px 4px;
+    border-bottom: 2px solid #374151;
+    color: #111827;
+}
+
+.bill-table td {
+    padding: 8px 4px;
+    border-bottom: 1px dotted #e5e7eb;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.bill-summary {
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    color: #4b5563;
+}
+
+.summary-line.grand-total {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.summary-line.grand-total span:last-child {
+    color: #d97706;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Bill Side Controls */
+.bill-controls {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eae5db;
+}
+
+.bill-controls h3 {
+    color: #1f1b18;
+    margin-bottom: 10px;
+}
+
+.bill-controls p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.bill-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.payment-box {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+.pay-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.pay-tag {
+    background-color: #f3f4f6;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* 7. Table Booking Form */
+.booking-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eae5db;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #d97706;
+}
+
+.booking-msg {
+    display: none;
+    margin-top: 18px;
+    padding: 12px;
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    color: #166534;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* 8. Customer Reviews */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.review-box {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eae5db;
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.review-box p {
+    font-style: italic;
+    color: #4b5563;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.review-box h4 {
+    color: #1f1b18;
+    font-size: 15px;
+    text-align: right;
+}
+
+/* 9. Footer Section */
+.footer {
+    background-color: #1f1b18;
+    color: #d1d5db;
+    padding: 50px 8% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col h3 {
+    color: #f59e0b;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* 10. Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .bill-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+}
+
+/* 11. Print Stylesheet: Only Prints the Clean Bill */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #printArea,
+    #printArea * {
+        visibility: visible;
+    }
+
+    #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>ðŸ— Zaika Biryani House</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#biryani">Biryani Feast (24+)</a></li>
+            <li><a href="#food-menu">Other Foods</a></li>
+            <li><a href="#bill-section">Bill & Receipt</a></li>
+            <li><a href="#booking">Book Table</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. Hero Banner -->
+    <header class="home" id="home">
+        <div class="hero-content">
+            <span class="tagline">ðŸ”¥ India's Ultimate Biryani Destination â€¢ 24+ Varieties</span>
+            <h1>The Grand Royal Biryani Collection</h1>
+            <p>From Hyderabadi Kachchi Dum and Awadhi Pakki Biryani to Araku Bamboo, Andhra Donne, and Malabar Thalasseryâ€”slow cooked over charcoal in dough-sealed clay handis.</p>
+            <div class="hero-buttons">
+                <a href="#biryani" class="btn btn-primary">Explore 24+ Biryanis</a>
+                <a href="#bill-section" class="btn btn-secondary">View Live Bill</a>
+                <a href="#booking" class="btn btn-outline">Reserve Table</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Expanded Biryani Special Section (24+ Varieties) -->
+    <section class="section" id="biryani">
+        <div class="section-title">
+            <span class="sub-title">Crown Heritage Collection</span>
+            <h2>24+ Handcrafted Regional Biryanis</h2>
+            <p>Authentic clay handi dum cooking using 2-year aged long-grain basmati, pure desi ghee, and heritage secret spices.</p>
+        </div>
+
+        <!-- Biryani Filter Bar -->
+        <div class="biryani-filters">
+            <button class="b-filter-btn active" onclick="filterBiryani('all')">âœ¨ All Biryanis (24)</button>
+            <button class="b-filter-btn" onclick="filterBiryani('chicken')">ðŸ— Chicken Biryanis (8)</button>
+            <button class="b-filter-btn" onclick="filterBiryani('mutton')">ðŸ¥© Mutton Biryanis (6)</button>
+            <button class="b-filter-btn" onclick="filterBiryani('seafood')">ðŸ¦ Seafood & Fish (3)</button>
+            <button class="b-filter-btn" onclick="filterBiryani('veg')">ðŸ¥¦ Pure Veg Biryanis (5)</button>
+            <button class="b-filter-btn" onclick="filterBiryani('regional')">ðŸ”¥ Regional Specials (Bamboo & Donne)</button>
+        </div>
+
+        <div class="card-grid" id="biryaniCardGrid">
+
+            <!-- 1. Hyderabadi Chicken Dum Biryani -->
+            <div class="food-card featured" data-type="chicken">
+                <div class="badge">#1 Best Seller</div>
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Hyderabadi Chicken Dum Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Hyderabadi Chicken Dum</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Medium Hot</span>
+                        <span class="origin-tag">Hyderabad</span>
+                    </div>
+                    <p class="description">Aged basmati rice layered with raw marinated chicken, saffron milk, fried onions & whole royal spices. Served with Mirchi Salan & Raita.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹320</del> â‚¹180</span>
+                        <button class="add-btn" onclick="addItemToBill('Hyderabadi Chicken Dum Biryani', 180)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Royal Mutton Dum Biryani -->
+            <div class="food-card featured" data-type="mutton">
+                <div class="badge">Chef's Pride</div>
+                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=600&q=80" alt="Royal Mutton Dum Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Royal Mutton Dum Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Rich & Spiced</span>
+                        <span class="origin-tag">Nizami</span>
+                    </div>
+                    <p class="description">Succulent cuts of baby goat meat slow-cooked over charcoal dum with saffron-infused ghee and fragrant mace & cardamom.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹440</del> â‚¹250</span>
+                        <button class="add-btn" onclick="addItemToBill('Royal Mutton Dum Biryani', 250)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Lucknowi Awadhi Dum Biryani -->
+            <div class="food-card" data-type="chicken">
+                <div class="badge">Royal Awadh</div>
+                <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=600&q=80" alt="Lucknowi Awadhi Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Lucknowi Awadhi Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Mild & Perfumed</span>
+                        <span class="origin-tag">Lucknow</span>
+                    </div>
+                    <p class="description">Subtle and intensely fragrant pakki biryani cooked with infused rose water, kewra essence, and melt-in-mouth chicken broth.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹350</del> â‚¹190</span>
+                        <button class="add-btn" onclick="addItemToBill('Lucknowi Awadhi Biryani', 190)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Kolkata Chicken & Aloo Biryani -->
+            <div class="food-card" data-type="chicken">
+                <div class="badge">Kolkata Classic</div>
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Kolkata Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Kolkata Chicken & Aloo</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Subtle & Sweet Spice</span>
+                        <span class="origin-tag">Kolkata</span>
+                    </div>
+                    <p class="description">Light, golden aromatic biryani cooked with spiced tender whole baby potato, farm egg, juicy chicken, and nutmeg aroma.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹290</del> â‚¹160</span>
+                        <button class="add-btn" onclick="addItemToBill('Kolkata Chicken & Aloo Biryani', 160)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Bamboo Chicken Dum Biryani -->
+            <div class="food-card featured" data-type="chicken regional">
+                <div class="badge">ðŸ”¥ Tribal Specialty</div>
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80" alt="Bamboo Chicken Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Bamboo Chicken Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Smoky Wood Embers</span>
+                        <span class="origin-tag">Araku Valley</span>
+                    </div>
+                    <p class="description">Marinated chicken cuts and spiced basmati rice stuffed into green hollow bamboo stalks and charcoal-roasted for unmatched natural woody flavor.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹390</del> â‚¹210</span>
+                        <button class="add-btn" onclick="addItemToBill('Bamboo Chicken Biryani', 210)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Fiery Andhra Donne Biryani -->
+            <div class="food-card" data-type="chicken regional">
+                <div class="badge">ðŸŒ¶ï¸ Fiery Hot</div>
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80" alt="Andhra Donne Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Fiery Andhra Donne Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ðŸŒ¶ï¸ Fiery Hot</span>
+                        <span class="origin-tag">Andhra</span>
+                    </div>
+                    <p class="description">Short-grain fragrant jeera sambar rice tossed in spicy green chili paste, fresh coriander, mint, and country chicken, served in eco leaf donne.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹330</del> â‚¹170</span>
+                        <button class="add-btn" onclick="addItemToBill('Fiery Andhra Donne Biryani', 170)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Potlam Mutton Keema Biryani -->
+            <div class="food-card featured" data-type="mutton regional">
+                <div class="badge">Chef Special</div>
+                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Potlam Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Potlam Mutton Keema Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Spicy Omelette Pocket</span>
+                        <span class="origin-tag">Deccan</span>
+                    </div>
+                    <p class="description">Fragrant biryani layered with rich minced lamb keema, wrapped snugly inside a delicate golden herb omelette pouch.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹460</del> â‚¹250</span>
+                        <button class="add-btn" onclick="addItemToBill('Potlam Mutton Keema Biryani', 250)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Konkan Tiger Prawns Ghee Roast Biryani -->
+            <div class="food-card" data-type="seafood">
+                <div class="badge">Seafood Delight</div>
+                <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=600&q=80" alt="Tiger Prawns Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Tiger Prawns Ghee Roast</h3>
+                        <span class="diet-tag non-veg">â— Seafood</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Coastal Ghee Punch</span>
+                        <span class="origin-tag">Mangalore</span>
+                    </div>
+                    <p class="description">Plump ocean tiger prawns pan-seared in rich Byadagi chili ghee roast masala, layered with saffron basmati rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹480</del> â‚¹260</span>
+                        <button class="add-btn" onclick="addItemToBill('Tiger Prawns Ghee Roast Biryani', 260)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Malabar Thalassery Chicken Biryani -->
+            <div class="food-card" data-type="chicken regional">
+                <div class="badge">Kerala Heritage</div>
+                <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=600&q=80" alt="Malabar Thalassery Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Malabar Thalassery Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Fragrant Ghee Rice</span>
+                        <span class="origin-tag">Malabar</span>
+                    </div>
+                    <p class="description">Made with thin Khyma rice, spiced tender chicken, caramelized shallots, crisp cashews, raisins, and pure Malabar ghee.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹340</del> â‚¹180</span>
+                        <button class="add-btn" onclick="addItemToBill('Malabar Thalassery Biryani', 180)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Dindigul Thalappakatti Mutton Biryani -->
+            <div class="food-card featured" data-type="mutton regional">
+                <div class="badge">Tamil Nadu Heritage</div>
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Dindigul Mutton Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Dindigul Thalappakatti Mutton</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Black Pepper Punch</span>
+                        <span class="origin-tag">Dindigul</span>
+                    </div>
+                    <p class="description">Iconic Seeraga samba tiny grain rice cooked with tender farm-fed baby goat meat, hand-ground pepper, and fresh curd.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹430</del> â‚¹240</span>
+                        <button class="add-btn" onclick="addItemToBill('Dindigul Thalappakatti Mutton', 240)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Ambur Star Chicken Dum Biryani -->
+            <div class="food-card" data-type="chicken regional">
+                <div class="badge">Nawab of Arcot</div>
+                <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80" alt="Ambur Chicken Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Ambur Star Chicken Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Tangy Curd Masala</span>
+                        <span class="origin-tag">Ambur</span>
+                    </div>
+                    <p class="description">Authentic seeraga samba rice cooked with curd, whole spices, coriander, and chicken, traditionally paired with Ennai Kathirikai (brinjal gravy).</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹330</del> â‚¹170</span>
+                        <button class="add-btn" onclick="addItemToBill('Ambur Star Chicken Biryani', 170)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Bhatkali Fish Dum Biryani -->
+            <div class="food-card" data-type="seafood">
+                <div class="badge">Coastal Catch</div>
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Bhatkali Fish Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Bhatkali Surmai Fish Biryani</h3>
+                        <span class="diet-tag non-veg">â— Seafood</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Spicy Onion Masala</span>
+                        <span class="origin-tag">Bhatkal</span>
+                    </div>
+                    <p class="description">Fresh Kingfish (Surmai) steaks cooked in deep golden caramelized onion paste and green chili marinade with white basmati rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹420</del> â‚¹220</span>
+                        <button class="add-btn" onclick="addItemToBill('Bhatkali Surmai Fish Biryani', 220)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Afghani Malai Cream Chicken Biryani -->
+            <div class="food-card" data-type="chicken">
+                <div class="badge">Mild & Creamy</div>
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80" alt="Afghani Chicken Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Afghani Malai Chicken Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Silky Cream & Cashew</span>
+                        <span class="origin-tag">Afghani</span>
+                    </div>
+                    <p class="description">Velvety chicken marinated in cashew nut paste, fresh cream, white pepper, and green cardamoms cooked with fragrant saffron rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹360</del> â‚¹190</span>
+                        <button class="add-btn" onclick="addItemToBill('Afghani Malai Chicken Biryani', 190)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Memoni Mutton Dum Biryani -->
+            <div class="food-card" data-type="mutton">
+                <div class="badge">Memoni Style</div>
+                <img src="https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&w=600&q=80" alt="Memoni Mutton Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Memoni Shahi Mutton Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Tomato & Spiced Potato</span>
+                        <span class="origin-tag">Gujarat / Sindh</span>
+                    </div>
+                    <p class="description">Rich lamb pieces cooked with golden spiced baby potatoes, ripe tomatoes, green chilies, yogurt, and aromatic long-grain basmati.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹450</del> â‚¹250</span>
+                        <button class="add-btn" onclick="addItemToBill('Memoni Shahi Mutton Biryani', 250)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. Guntur Gongura Mutton Biryani -->
+            <div class="food-card featured" data-type="mutton regional">
+                <div class="badge">ðŸŒ¶ï¸ðŸŒ¶ï¸ Spicy Tangy</div>
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Gongura Mutton Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Guntur Gongura Mutton Biryani</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ðŸŒ¶ï¸ Tangy Sorrel Leaves</span>
+                        <span class="origin-tag">Guntur</span>
+                    </div>
+                    <p class="description">Succulent baby goat meat tossed in fiery Guntur chili and sour gongura leaf paste, layered with spiced basmati dum rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹440</del> â‚¹240</span>
+                        <button class="add-btn" onclick="addItemToBill('Guntur Gongura Mutton Biryani', 240)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Chettinad Country Chicken Biryani -->
+            <div class="food-card" data-type="chicken regional">
+                <div class="badge">Chettinad Fire</div>
+                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Chettinad Chicken Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Chettinad Country Chicken</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ðŸŒ¶ï¸ Kalpasi & Star Anise</span>
+                        <span class="origin-tag">Chettinad</span>
+                    </div>
+                    <p class="description">Country chicken (Nati Koli) cooked with freshly roasted Chettinad masala, stone flower (kalpasi), black pepper, and seeraga samba rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹340</del> â‚¹180</span>
+                        <button class="add-btn" onclick="addItemToBill('Chettinad Country Chicken Biryani', 180)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Hyderabadi Zafraani Mutton Dum Biryani -->
+            <div class="food-card featured" data-type="mutton">
+                <div class="badge">ðŸ‘‘ Royal Gold Feast</div>
+                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=600&q=80" alt="Zafraani Mutton Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Hyderabadi Zafraani Mutton</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">Pure Kashmiri Saffron</span>
+                        <span class="origin-tag">Royal Court</span>
+                    </div>
+                    <p class="description">Mutton marinated in pure saffron milk, royal almond paste, cardamom, and rose water, topped with edible silver foil (vark).</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹490</del> â‚¹270</span>
+                        <button class="add-btn" onclick="addItemToBill('Hyderabadi Zafraani Mutton', 270)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. Chicken Tikka Boneless Biryani -->
+            <div class="food-card" data-type="chicken">
+                <div class="badge">Boneless Tikka</div>
+                <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Chicken Tikka Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Chicken Tikka Boneless</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Charcoal Smoky</span>
+                        <span class="origin-tag">Punjab</span>
+                    </div>
+                    <p class="description">Juicy charcoal-grilled boneless chicken tikka chunks cooked in a rich tandoori spiced gravy and layered with aromatic basmati.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹350</del> â‚¹190</span>
+                        <button class="add-btn" onclick="addItemToBill('Chicken Tikka Boneless Biryani', 190)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19. Karwar Crab Meat Ghee Roast Biryani -->
+            <div class="food-card featured" data-type="seafood">
+                <div class="badge">Crab Specialty</div>
+                <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=600&q=80" alt="Crab Meat Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Karwar Crab Meat Ghee Roast</h3>
+                        <span class="diet-tag non-veg">â— Seafood</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Sea Crab Masala</span>
+                        <span class="origin-tag">Karwar</span>
+                    </div>
+                    <p class="description">Fresh sea crab meat simmered in fiery coastal red chili and clarified butter ghee roast masala with saffron basmati rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹520</del> â‚¹270</span>
+                        <button class="add-btn" onclick="addItemToBill('Karwar Crab Meat Ghee Roast Biryani', 270)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20. Shahi Paneer Tikka Dum Biryani -->
+            <div class="food-card" data-type="veg">
+                <div class="badge">Pure Veg Royal</div>
+                <img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?auto=format&fit=crop&w=600&q=80" alt="Paneer Dum Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Shahi Paneer Tikka Biryani</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Charcoal Tikka</span>
+                        <span class="origin-tag">Vegetarian</span>
+                    </div>
+                    <p class="description">Charcoal-grilled cottage cheese cubes layered with herb basmati rice, caramelized onions, fresh mint leaves, and roasted dry fruits.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹280</del> â‚¹150</span>
+                        <button class="add-btn" onclick="addItemToBill('Shahi Paneer Tikka Biryani', 150)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21. Kaju Mushroom Dum Biryani -->
+            <div class="food-card" data-type="veg">
+                <div class="badge">Pure Veg Special</div>
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Kaju Mushroom Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Kaju & Mushroom Biryani</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Rich & Nutty</span>
+                        <span class="origin-tag">Vegetarian</span>
+                    </div>
+                    <p class="description">Button mushrooms and whole roasted cashew nuts simmered in fragrant saffron-coriander basmati rice with whole spices.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹290</del> â‚¹160</span>
+                        <button class="add-btn" onclick="addItemToBill('Kaju & Mushroom Biryani', 160)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22. Soya Chaap Tikka Dum Biryani -->
+            <div class="food-card" data-type="veg">
+                <div class="badge">High Protein Veg</div>
+                <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Soya Chaap Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Soya Chaap Tikka Biryani</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ðŸŒ¶ï¸ Juicy Smoky</span>
+                        <span class="origin-tag">Delhi Style</span>
+                    </div>
+                    <p class="description">Juicy soya chaap skewers marinated in tandoori yogurt masala, grilled and layered with saffron-scented dum basmati rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹270</del> â‚¹140</span>
+                        <button class="add-btn" onclick="addItemToBill('Soya Chaap Tikka Biryani', 140)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23. Nawabi Kathal (Baby Jackfruit) Dum Biryani -->
+            <div class="food-card" data-type="veg">
+                <div class="badge">Nawabi Veg Feast</div>
+                <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=600&q=80" alt="Kathal Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Nawabi Kathal (Jackfruit)</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Meat-like Texture</span>
+                        <span class="origin-tag">Awadh Veg</span>
+                    </div>
+                    <p class="description">Tender young jackfruit marinated like royal meat with ginger, yogurt, and garam masala, slow-dum cooked with basmati.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹260</del> â‚¹130</span>
+                        <button class="add-btn" onclick="addItemToBill('Nawabi Kathal Biryani', 130)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24. Amritsari Chole Paneer Dum Biryani -->
+            <div class="food-card" data-type="veg">
+                <div class="badge">Punjabi Special</div>
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80" alt="Chole Paneer Biryani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Amritsari Chole Paneer</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <div class="biryani-meta-tags">
+                        <span class="spice-tag">ðŸŒ¶ï¸ Spiced Pindi Masala</span>
+                        <span class="origin-tag">Amritsar</span>
+                    </div>
+                    <p class="description">Spicy tea-leaf-steeped Pindi chickpeas and soft cottage cheese chunks tossed in pomegranate masala with basmati rice.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹250</del> â‚¹120</span>
+                        <button class="add-btn" onclick="addItemToBill('Amritsari Chole Paneer Biryani', 120)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. General Food Menu Section -->
+    <section class="section bg-light" id="food-menu">
+        <div class="section-title">
+            <span class="sub-title">Taste The Best</span>
+            <h2>Our Complete Food Menu</h2>
+            <p>From sizzling starters and rich curries to tandoori breads and chilled drinks</p>
+        </div>
+
+        <!-- Starters -->
+        <h3 class="category-heading">ðŸŒ¶ï¸ Starters & Appetizers</h3>
+        <div class="card-grid">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80" alt="Chicken 65">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Chicken 65</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <p class="description">Crispy spicy chicken chunks tossed with curry leaves, yogurt, and green chilies.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹250</del> â‚¹130</span>
+                        <button class="add-btn" onclick="addItemToBill('Chicken 65', 130)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Paneer Tikka">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Tandoori Paneer Tikka</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <p class="description">Juicy cottage cheese cubes marinated in yogurt and spices, grilled in tandoor.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹230</del> â‚¹120</span>
+                        <button class="add-btn" onclick="addItemToBill('Tandoori Paneer Tikka', 120)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Tandoori Chicken">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Tandoori Chicken (Half)</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <p class="description">Classic tandoor roasted chicken with smoky aroma, served with mint chutney.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹290</del> â‚¹150</span>
+                        <button class="add-btn" onclick="addItemToBill('Tandoori Chicken (Half)', 150)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Course Curries -->
+        <h3 class="category-heading">ðŸ² Main Course & Curries</h3>
+        <div class="card-grid">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80" alt="Butter Chicken">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Butter Chicken</h3>
+                        <span class="diet-tag non-veg">â— Non-Veg</span>
+                    </div>
+                    <p class="description">Tender roasted chicken simmered in a velvety tomato and cashew nut butter gravy.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹330</del> â‚¹170</span>
+                        <button class="add-btn" onclick="addItemToBill('Butter Chicken', 170)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80" alt="Paneer Butter Masala">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Paneer Butter Masala</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <p class="description">Soft paneer cubes in rich sweet-savory creamy tomato gravy with butter.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹260</del> â‚¹130</span>
+                        <button class="add-btn" onclick="addItemToBill('Paneer Butter Masala', 130)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Dal Makhani">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Dal Makhani</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <p class="description">Black lentils slow-cooked overnight with fresh cream, butter, and mild spices.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹220</del> â‚¹110</span>
+                        <button class="add-btn" onclick="addItemToBill('Dal Makhani', 110)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Breads & Desserts -->
+        <h3 class="category-heading">ðŸ«“ Breads & Sweet Desserts</h3>
+        <div class="card-grid">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Butter Naan">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Butter Naan</h3>
+                        <span class="diet-tag veg">â— Pure Veg</span>
+                    </div>
+                    <p class="description">Soft clay tandoor flatbread brushed generously with fresh melted butter.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹50</del> â‚¹30</span>
+                        <button class="add-btn" onclick="addItemToBill('Butter Naan', 30)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1589119908995-c6837fa14d48?auto=format&fit=crop&w=600&q=80" alt="Gulab Jamun">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Gulab Jamun with Rabdi</h3>
+                        <span class="diet-tag veg">â— Sweet</span>
+                    </div>
+                    <p class="description">Two warm golden dumplings soaked in sugar syrup, served with creamy rabdi.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹120</del> â‚¹60</span>
+                        <button class="add-btn" onclick="addItemToBill('Gulab Jamun with Rabdi', 60)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80" alt="Mango Lassi">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Alphonso Mango Lassi</h3>
+                        <span class="diet-tag veg">â— Beverage</span>
+                    </div>
+                    <p class="description">Thick chilled yogurt beverage blended with sweet Alphonso mango pulp.</p>
+                    <div class="card-footer">
+                        <span class="price"><del class="old-price">â‚¹90</del> â‚¹45</span>
+                        <button class="add-btn" onclick="addItemToBill('Alphonso Mango Lassi', 45)">+ Add to Bill</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Interactive Bill & Receipt Section -->
+    <section class="section" id="bill-section">
+        <div class="section-title">
+            <span class="sub-title">Billing & Invoice</span>
+            <h2>Customer Order Bill</h2>
+            <p>Click "+ Add to Bill" on any dish above to see the bill calculate in real time!</p>
+        </div>
+
+        <div class="bill-wrapper">
+            <!-- Receipt Box -->
+            <div class="receipt-box" id="printArea">
+                <!-- Receipt Header -->
+                <div class="receipt-header">
+                    <h2>ZAIKA RESTAURANT</h2>
+                    <p class="receipt-sub">Authentic Biryanis & Fine Dining</p>
+                    <p>Opposite City Park, Main Road, Hyderabad</p>
+                    <p>Phone: +91 98765 43210 | GSTIN: 36AAAAZ1234F1Z1</p>
+                    <div class="bill-meta">
+                        <span><strong>Bill No:</strong> #ZR-5021</span>
+                        <span><strong>Date:</strong> 24-Oct-2026</span>
+                        <span><strong>Table:</strong> Table 05</span>
+                    </div>
+                </div>
+
+                <hr class="bill-divider">
+
+                <!-- Bill Table -->
+                <table class="bill-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item Name</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th class="text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billItemsBody">
+                        <!-- Default sample items so bill is never empty -->
+                        <tr>
+                            <td>1</td>
+                            <td>Hyderabadi Chicken Dum Biryani</td>
+                            <td>â‚¹180</td>
+                            <td>1</td>
+                            <td class="text-right">â‚¹180</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Butter Naan</td>
+                            <td>â‚¹30</td>
+                            <td>2</td>
+                            <td class="text-right">â‚¹60</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr class="bill-divider">
+
+                <!-- Bill Calculations -->
+                <div class="bill-summary">
+                    <div class="summary-line">
+                        <span>Item Subtotal:</span>
+                        <span id="billSubtotal">â‚¹240.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>CGST (2.5%):</span>
+                        <span id="billCgst">â‚¹6.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>SGST (2.5%):</span>
+                        <span id="billSgst">â‚¹6.00</span>
+                    </div>
+                    <hr class="bill-divider">
+                    <div class="summary-line grand-total">
+                        <span>GRAND TOTAL PAYABLE:</span>
+                        <span id="billGrandTotal">â‚¹252.00</span>
+                    </div>
+                </div>
+
+                <!-- Receipt Footer -->
+                <div class="receipt-footer">
+                    <p>*** Thank You For Dining With Us! Please Visit Again ***</p>
+                    <small>FSSAI Lic No: 13621014000342</small>
+                </div>
+            </div>
+
+            <!-- Bill Controls -->
+            <div class="bill-controls">
+                <h3>Bill Options</h3>
+                <p>You can print this official receipt, clear the bill, or select your payment mode.</p>
+                <div class="bill-buttons">
+                    <button class="btn btn-primary" onclick="window.print()">ðŸ–¨ï¸ Print Receipt / Bill</button>
+                    <button class="btn btn-secondary" onclick="resetBill()">ðŸ”„ Reset Bill</button>
+                </div>
+                <div class="payment-box">
+                    <label><strong>Accepted Payment Methods:</strong></label>
+                    <div class="pay-icons">
+                        <span class="pay-tag">ðŸ’µ Cash</span>
+                        <span class="pay-tag">ðŸ“± UPI / QR Code</span>
+                        <span class="pay-tag">ðŸ’³ Debit / Credit Card</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Table Booking Section -->
+    <section class="section bg-light" id="booking">
+        <div class="section-title">
+            <span class="sub-title">Reservation</span>
+            <h2>Book A Table Online</h2>
+            <p>Reserve a table in advance for family lunch, dinner dates, or birthday parties.</p>
+        </div>
+
+        <form class="booking-form" onsubmit="handleBooking(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bookName">Your Name:</label>
+                    <input type="text" id="bookName" placeholder="e.g. Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookPhone">Phone Number:</label>
+                    <input type="tel" id="bookPhone" placeholder="e.g. +91 9876543210" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bookDate">Date:</label>
+                    <input type="date" id="bookDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookGuests">Number of Guests:</label>
+                    <select id="bookGuests">
+                        <option value="2">2 Persons (Couple)</option>
+                        <option value="4" selected>4 Persons (Family)</option>
+                        <option value="6">6 Persons (Party)</option>
+                        <option value="8+">8+ Persons (Banquet)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bookTime">Preferred Time Slot:</label>
+                <select id="bookTime">
+                    <option value="1:00 PM">1:00 PM - Lunch</option>
+                    <option value="2:00 PM">2:00 PM - Lunch</option>
+                    <option value="8:00 PM">8:00 PM - Dinner</option>
+                    <option value="9:00 PM">9:00 PM - Dinner</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+            <div id="bookingMessage" class="booking-msg"></div>
+        </form>
+    </section>
+
+    <!-- 7. Customer Reviews Section -->
+    <section class="section">
+        <div class="section-title">
+            <span class="sub-title">Customer Feedback</span>
+            <h2>What Foodies Say</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-box">
+                <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+                <p>"The Hyderabadi Chicken Dum Biryani and Bamboo Biryani aroma was unforgettable. Melt-in-mouth chicken and the printed bill made everything super clear and transparent."</p>
+                <h4>- Sneha Roy</h4>
+            </div>
+            <div class="review-box">
+                <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+                <p>"Best Mutton Biryani in town! 24+ varieties to choose from is mind-blowing. Wonderful Butter Chicken with crispy Butter Naan."</p>
+                <h4>- Rajesh Varma</h4>
+            </div>
+            <div class="review-box">
+                <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+                <p>"Booked a table for my parents' anniversary. The Dindigul Thalappakatti and Potlam Keema Biryani were pure bliss."</p>
+                <h4>- Priya Nair</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer Section -->
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Zaika Biryani House</h3>
+                <p>Bringing royal Mughlai and authentic Hyderabadi biryani delicacies straight from clay handis to your dining table with 24+ varieties.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 11:30 AM - 11:00 PM</p>
+                <p>Saturday - Sunday: 11:30 AM - 11:30 PM</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact & Address</h3>
+                <p>ðŸ“ Plot #45, Gourmet Boulevard, Hyderabad</p>
+                <p>ðŸ“ž Phone: +91 98765 43210</p>
+                <p>âœ‰ï¸ Email: zaikabiryani@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zaika Restaurant & Biryani Corner. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Bill & Filter JavaScript -->
+    <script>
+        let billItems = [
+            { name: 'Hyderabadi Chicken Dum Biryani', price: 180, qty: 1 },
+            { name: 'Butter Naan', price: 30, qty: 2 }
+        ];
+
+        // Filter Biryanis by Category
+        function filterBiryani(category) {
+            const buttons = document.querySelectorAll('.b-filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('#biryaniCardGrid .food-card');
+            cards.forEach(card => {
+                const type = card.getAttribute('data-type') || '';
+                if (category === 'all' || type.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Add item to bill
+        function addItemToBill(itemName, itemPrice) {
+            let found = billItems.find(item => item.name === itemName);
+            if (found) {
+                found.qty += 1;
+            } else {
+                billItems.push({ name: itemName, price: itemPrice, qty: 1 });
+            }
+            renderBill();
+            alert(`"${itemName}" added to your Bill! Scroll down to view.`);
+        }
+
+        // Render Bill Table & Compute Taxes
+        function renderBill() {
+            const tbody = document.getElementById('billItemsBody');
+            tbody.innerHTML = '';
+            let subtotal = 0;
+
+            billItems.forEach((item, index) => {
+                let total = item.price * item.qty;
+                subtotal += total;
+
+                let row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.name}</td>
+                        <td>â‚¹${item.price}</td>
+                        <td>${item.qty}</td>
+                        <td class="text-right">â‚¹${total}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+
+            // 5% GST (2.5% CGST + 2.5% SGST)
+            let cgst = subtotal * 0.025;
+            let sgst = subtotal * 0.025;
+            let grandTotal = subtotal + cgst + sgst;
+
+            document.getElementById('billSubtotal').innerText = 'â‚¹' + subtotal.toFixed(2);
+            document.getElementById('billCgst').innerText = 'â‚¹' + cgst.toFixed(2);
+            document.getElementById('billSgst').innerText = 'â‚¹' + sgst.toFixed(2);
+            document.getElementById('billGrandTotal').innerText = 'â‚¹' + grandTotal.toFixed(2);
+        }
+
+        // Reset the bill
+        function resetBill() {
+            billItems = [];
+            renderBill();
+            alert("Bill has been reset!");
+        }
+
+        // Handle reservation
+        function handleBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('bookName').value;
+            const msgBox = document.getElementById('bookingMessage');
+            msgBox.innerHTML = `âœ… Thank you, <strong>${name}</strong>! Your table reservation is confirmed. We look forward to serving you!`;
+            msgBox.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
